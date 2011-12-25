@@ -83,7 +83,7 @@ namespace HubSpotApiDotNetConsoleTest
                 Console.WriteLine("-------------------------------------------");
                 foreach (var l in leads)
                 {
-                    Console.WriteLine(l.Email + ", " + l.FirstName + " " + l.LastName + ", " + l.Guid + ", " + l.Id);
+                    Console.WriteLine(l.Email + ", " + l.FirstName + " " + l.LastName);
                 }
                 Console.WriteLine();
             }

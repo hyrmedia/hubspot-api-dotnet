@@ -23,6 +23,15 @@ namespace HubSpotApiDotNet
             string destination = string.Format(URL_SEARCH, _ApiKey) + criteria.ToQueryString();
             string jsonResult = Utilities.HttpUtils.SendRequestByGet(destination);
 
+            dynamic leadsDynamic = Utilities.DynamicJson.Parse(jsonResult);
+            if (leadsDynamic != null)
+            {
+                foreach (var ld in leadsDynamic)
+                {
+                    Leads.LeadData l = new Leads.LeadData(ld);                    
+                    result.Add(l);
+                }
+            }
             return result;
         }
     }

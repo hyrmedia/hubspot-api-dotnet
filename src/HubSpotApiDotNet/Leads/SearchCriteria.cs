@@ -26,11 +26,11 @@ namespace HubSpotApiDotNet.Leads
         public DateTime StartDateUtc { get; set; }
         public DateTime StopDateUtc { get; set; }
         public TimePivot StartStopDateType { get; set; }
-        public bool ExcludeConversionEvents { get; set; }
-        public bool IncludeOptOutLeads { get; set; }
-        public bool IncludeOnlyEmailEligibleLeads { get; set; }
-        public bool IncludeOnlyBouncedLeads { get; set; }
-        public bool IncludeOnlyNonImportedLeads { get; set; }
+        public bool? ExcludeConversionEvents { get; set; }
+        public bool? IncludeOptOutLeads { get; set; }
+        public bool? IncludeOnlyEmailEligibleLeads { get; set; }
+        public bool? IncludeOnlyBouncedLeads { get; set; }
+        public bool? IncludeOnlyNonImportedLeads { get; set; }
         public List<string> SpecificLeadGuids { get; set; }
 
         public SearchCriteria()
@@ -42,12 +42,7 @@ namespace HubSpotApiDotNet.Leads
             this.Direction = SortDirection.NotSet;
             this.StartDateUtc = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             this.StopDateUtc = DateTime.UtcNow;
-            this.StartStopDateType = TimePivot.NotSet;
-            this.ExcludeConversionEvents = false;
-            this.IncludeOptOutLeads = false;
-            this.IncludeOnlyEmailEligibleLeads = false;
-            this.IncludeOnlyBouncedLeads = false;
-            this.IncludeOnlyNonImportedLeads = false;
+            this.StartStopDateType = TimePivot.NotSet;            
             this.SpecificLeadGuids = new List<string>();
         }
 
@@ -107,11 +102,16 @@ namespace HubSpotApiDotNet.Leads
                 }
             }
 
-            AddParam(sb, "excludeConversionEvents", this.ExcludeConversionEvents ? "true": "false");
-            AddParam(sb, "optout", this.IncludeOptOutLeads ? "true" : "false");
-            AddParam(sb, "eligibleForEmail", this.IncludeOnlyEmailEligibleLeads ? "true" : "false");
-            AddParam(sb, "bounced", this.IncludeOnlyBouncedLeads ? "true" : "false");
-            AddParam(sb, "isNotImported", this.IncludeOnlyNonImportedLeads ? "true" : "false");
+            if (this.ExcludeConversionEvents.HasValue)
+                AddParam(sb, "excludeConversionEvents", this.ExcludeConversionEvents.Value ? "true" : "false");
+            if (this.IncludeOptOutLeads.HasValue)
+                AddParam(sb, "optout", this.IncludeOptOutLeads.Value ? "true" : "false");
+            if (this.IncludeOnlyEmailEligibleLeads.HasValue)
+                AddParam(sb, "eligibleForEmail", this.IncludeOnlyEmailEligibleLeads.Value ? "true" : "false");
+            if (this.IncludeOnlyBouncedLeads.HasValue)
+                AddParam(sb, "bounced", this.IncludeOnlyBouncedLeads.Value ? "true" : "false");
+            if (this.IncludeOnlyNonImportedLeads.HasValue)
+                AddParam(sb, "isNotImported", this.IncludeOnlyNonImportedLeads.Value ? "true" : "false");
 
             int counter = 0;
             foreach (string s in this.SpecificLeadGuids)

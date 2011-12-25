@@ -95,5 +95,71 @@ namespace HubSpotApiDotNet.Leads
         public string UserToken { get; set; }
         public string Website { get; set; }
         public string Zip { get; set; }
+
+        public LeadData()
+        {
+        }
+
+        public LeadData(dynamic l)
+        {
+            this.Address = l.address;
+            //this.AnalyticsDetails = ;
+            this.City = l.city;
+            this.ClosedAt = l.closedAt;
+            this.Company = l.company;
+            this.Country = l.country;
+            //this.CrmDetails = ;
+            this.CustomerStatusModifiedAt = l.customerStatusModifiedAt;
+            this.EligibleForEmail = l.eligibleForEmail;
+            this.Email = l.email;
+            this.EmailBounced = l.emailBounced;
+            this.EmailOptOut = l.emailOptOut;
+            this.Fax = l.fax;
+            this.FirstCampaign = l.firstCampaign;
+            this.FirstName = l.firstName;
+            this.FirstRefDomain = l.firstRefDomain;
+            this.FirstReferrer = l.firstReferrer;
+            this.FirstURL = l.firstURL;
+            this.FirstVisitSetAt = l.firstVisitSetAt;
+            this.FoundVia = l.foundVia;
+            this.FullFoundViaString = l.fullFoundViaString;
+            this.Guid = l.guid;
+            this.Id = l.id;
+            this.Imported = l.imported;
+            this.Industry = l.industry;
+            this.InsertedAt = l.insertedAt;
+            this.IpAddress = l.ipAddress;
+            this.IsCustomer = l.isCustomer;
+            this.IsDeleted = l.isDeleted;
+            this.JobTitle = l.jobTitle;
+            this.LastConvertedAt = l.lastConvertedAt;
+            this.LastModifiedAt = l.lastModifiedAt;
+            this.LastName = l.lastName;
+            //this.LeadConversionEvents = ;
+            //this.LeadCustomerStatusModifyLogs = ;
+            //this.LeadDeleteLogs = ;
+            this.LeadId = l.leadId;
+            this.LeadJsonLink = l.leadJsonLink;
+            this.LeadLink = l.leadLink;
+            this.LeadNurturingActive = l.leadNurturingActive;
+            this.LeadNurturingCampaignId = l.leadNurturingCampaignId;
+            this.Message = l.message;
+            this.NumConversionEvents = l.numConversionEvents;
+            this.Phone = l.phone;
+            this.PortalId = l.portalId;
+            this.PublicLeadLink = l.publicLeadLink;
+            this.RawScore = l.rawScore;
+            this.Salutation = l.salutation;
+            this.Score = l.score;
+            this.SourceId = l.sourceId;
+            this.SourceValue1 = l.sourceValue1;
+            this.SourceValue2 = l.sourceValue2;
+            this.SourceValueModifiedAt = l.sourceValueModifiedAt;
+            this.State = l.state;
+            this.TwitterHandle = l.twitterHandle;
+            this.UserToken = l.userToken;
+            this.Website = l.website;
+            this.Zip = l.zip;
+        }
     }
 }

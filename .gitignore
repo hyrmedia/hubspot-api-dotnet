@@ -1,0 +1,14 @@
+nbproject
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.suo
+*.user
+*.vspcc
+*.vsp
+[Bb]in/
+[Oo]bj/
+/[Bb]uilds
+*.orig
+apikey.txt
+

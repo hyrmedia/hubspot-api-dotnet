@@ -11,14 +11,14 @@ Marcus
 
 What's Working Now
 ------------------------
-* Lead Api for Searching
-
+* Lead Api: Search
+* Lead Api: Create New 
 
 What we're working on 
 ------------------------
-* Creating Leads
-* Updating Leads
+* Lead Api: Update
 * Other Apis next
+
 
 
 

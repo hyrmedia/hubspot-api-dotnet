@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="LeadsApi.cs" />
     <Compile Include="Leads\AnalyticsDetails.cs" />
+    <Compile Include="Leads\CreateLeadRequest.cs" />
     <Compile Include="Leads\CrmDetails.cs" />
     <Compile Include="Leads\FormSubmissionValue.cs" />
     <Compile Include="Leads\LeadConversionEvent.cs" />

@@ -34,5 +34,17 @@ namespace HubSpotApiDotNet
             }
             return result;
         }
+
+        public bool CreateNewLead(string formUrl, Leads.CreateLeadRequest request)
+        {
+            bool result = false;
+
+            string destination = formUrl;
+            string postData = request.ToPostData();
+            string jsonResult = Utilities.HttpUtils.SendRequestByPost(destination, postData);
+            result = true;
+
+            return result;
+        }
     }
 }
